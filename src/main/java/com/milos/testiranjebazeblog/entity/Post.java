@@ -1,52 +1,59 @@
 package com.milos.testiranjebazeblog.entity;
 
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.Set;
+
+import java.time.Instant;
+import java.util.List;
+
+
+import static javax.persistence.FetchType.*;
 
 @Table(name = "post")
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, updatable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "post_id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @OneToOne(optional = false, orphanRemoval = true)
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
-
-    @OneToMany(mappedBy = "post", orphanRemoval = true)
-    private Set<Comment> comments;
-
-    @OneToMany(mappedBy = "post", orphanRemoval = true)
-    private Set<Tag> tags;
-
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Lob
-    @Column(name = "content")
-    private String content;
+    @Column(name = "body", columnDefinition = "TEXT")
+    private String body;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "create_date", nullable = false, updatable = false)
+    private Instant createDate;
 
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
+    private User user;
 
-    @Column(name = "is_active")
-    private Boolean isActive;
+    @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE)
+    private List<Comment> comments;
 
 
+    @OneToMany(mappedBy = "post")
+    private List<Category> categories;
+
+
+    @Transient
+    private MultipartFile postImage;
+
+
+
+//    @Column(name = "updated_at")
+//    private Instant updatedAt;
+//
+//    @Column(name = "is_active")
+//    private Boolean isActive = true;
+//
+//    @Column(name = "published_by")
+//    private String publishedBy;
 }

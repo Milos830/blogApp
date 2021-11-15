@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            href="https://fonts.googleapis.com/css?family=Poppins:300,400,700"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link href="https://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="https://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <title>Home page</title>
+
+</head>
+
+<body>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" th:href="@{/posts}">Post</a></li>
+                    <li><a href="#" th:href="@{/post}">Create Post</a></li>
+                    <li><a href="#" th:href="@{/register}">Login</a></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+    <div class="blog-card">
+        <div class="meta">
+            <div
+                    class="photo"
+                    style="
+            background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg);
+          "
+            ></div>
+            <ul class="details">
+                <li class="author"><a href="#">Petar Jebivetar</a></li>
+                <li class="date">Aug. 24, 2021</li>
+                <li class="tags">
+                    <ul>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">React</a></li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <h1>Title of a Blog</h1>
+            <h2>Opening a door to the future</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+                dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque
+                ad aliquam facilis numquam. Veritatis, sit.
+            </p>
+            <p class="read-more">
+                <a href="#">Edit</a>
+            </p>
+        </div>
+    </div>
+    <div class="blog-card alt">
+        <div class="meta">
+            <div
+                    class="photo"
+                    style="
+            background-image: url(https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1160&q=80);
+          "
+            ></div>
+            <ul class="details">
+                <li class="author"><a href="#">Jebivetar Petar</a></li>
+                <li class="date">July. 15, 2021</li>
+                <li class="tags">
+                    <ul>
+                        <li><a href="#">Spring</a></li>
+                        <li><a href="#">Node.js</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <h1>Title of a Blog</h1>
+            <h2>Java is not the same as JavaScript</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+                dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque
+                ad aliquam facilis numquam. Veritatis, sit.
+            </p>
+            <p class="read-more">
+                <a href="#">Edit</a>
+            </p>
+        </div>
+    </div>
+    <div class="blog-card">
+        <div class="meta">
+            <div
+                    class="photo"
+                    style="
+            background-image: url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1744&q=80);
+          "
+            ></div>
+            <ul class="details">
+                <li class="author"><a href="#">Petar Jebivetar</a></li>
+                <li class="date">Aug. 24, 2021</li>
+                <li class="tags">
+                    <ul>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">React</a></li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <h1>Title of a Blog</h1>
+            <h2>Random text</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad atque nisi
+                voluptas molestiae sequi tempora obcaecati neque, laudantium provident
+                unde odit eveniet necessitatibus eligendi veniam ullam impedit
+                expedita aliquam molestias odio quia. Doloribus unde odio quis tenetur
+                facilis iure, eius obcaecati cumque repudiandae asperiores maxime!
+                Tempore quasi, unde dolor eaque, corrupti, nobis delectus natus cum
+                illum voluptatum dolores eos? Exercitationem doloribus reiciendis
+                debitis similique voluptatibus cum mollitia voluptatum aspernatur,
+                amet ratione praesentium fugit eum! Ipsam quibusdam recusandae
+                accusamus hic fugiat itaque expedita optio sed cum dolores at ratione
+                animi est mollitia voluptates nesciunt dignissimos corporis aut odio,
+                et esse distinctio.
+            </p>
+            <p class="read-more">
+                <a href="#">Edit</a>
+            </p>
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>

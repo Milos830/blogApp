@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+
+  </head>
+  body>
+  <div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(posts)}">
+      <h2>Product List</h2>
+      <table class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Post Id</th>
+          <th>Category</th>
+          <th>Title</th>
+          <th>Created</th>
+          <th>Description</th>
+          <th>Edit</th>
+        </tr>
+        <tr th:each="product : ${products}">
+          <td th:text="${post.id}"><a href="/post/${post.id}">Id</a></td>
+          <td th:text="${post.postId}">Post Id</td>
+          <td th:text="${post.category}">Category</td>
+          <td th:text="${post.title}">Title</td>
+          <td th:text="${post.createdDate}">Created</td>
+          <td th:text="${post.description}">Description</td>
+          <td><a th:href="${ '/post/' + post.id}">View</a></td>
+          <td><a th:href="${'/post/edit/' + post.id}">Edit</a></td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+  </body>
+</html>
